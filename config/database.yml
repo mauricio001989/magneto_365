@@ -1,0 +1,22 @@
+# PostgreSQL. Versions 9.3 and up are supported.
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: magneto_365_development
+
+test:
+  <<: *default
+  database: magneto_365_test
+
+production:
+  <<: *default
+  database: magneto_365_production
+  username: magneto_365
+  password: <%= ENV['MAGNETO_365_DATABASE_PASSWORD'] %>
