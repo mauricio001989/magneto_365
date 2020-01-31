@@ -1,4 +1,4 @@
 class Reservation < ApplicationRecord
-  belongs_to :user, dependent: :nullify
-  belongs_to :film, dependent: :nullify
+  belongs_to :user
+  belongs_to :film
 end
