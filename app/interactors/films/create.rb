@@ -4,8 +4,7 @@ module Films
 
     def call
       # TODO: implement i18n for translate
-
-      context.fail!(errors: 'fechas no validos') unless valid_date?
+      context.fail!(errors: 'error de datos') unless valid_date? && new_film.valid?
       context.output = new_film if new_film.save
     end
 

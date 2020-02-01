@@ -1,14 +1,17 @@
 module Api
   module V1
     class FilmsController < ApiController
+      # GET /api/v1/films
       def index
         render json: list_films(Time.zone.today), each_serializer: FilmSerializer
       end
 
+      # GET /api/v1/films/:date
       def show_films
         render json: list_films(date_param), each_serializer: FilmSerializer
       end
 
+      # POST /api/v1/films
       def create
         result = Films::Create.call(film_param: film_param)
         render_result(result, :created, :unprocessable_entity)
