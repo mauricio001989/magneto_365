@@ -4,7 +4,7 @@ module Reservations
 
     def call
       # TODO: implement i18n for translate
-      context.fail!(errors: 'no se pueden hacer mas reservas') if film.reservations.count == 10
+      context.fail!(errors: 'no se pueden hacer mas reservas') unless validations?
 
       reservation.save
       context.output = reservation
@@ -31,6 +31,10 @@ module Reservations
       end
 
       @user
+    end
+
+    def validations?
+      film.reservations.count < 10 && user.valid?
     end
   end
 end
