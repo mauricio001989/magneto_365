@@ -5,6 +5,7 @@ Rails:
 
 AllCops:
   Exclude:
+    - lib/tasks/**
     - spec/support/spec_helper.rb
     - spec/rails_helper.rb
     - db/**/*

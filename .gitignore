@@ -8,7 +8,10 @@
 /spec/examples.txt
 /test/tmp/
 /test/version_tmp/
-/tmp/
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/db/seeds/fails_file/*.txt
+/tmp
 
 # Used by dotenv library to load environment variables.
 # .env

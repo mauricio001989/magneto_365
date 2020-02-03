@@ -1,0 +1,7 @@
+camilo, camilo@gma.com, 123456789, 1111111111
+sebastian, sebastian@gma.com, 123456789, 2222222222
+jorge, jorge@gma.com, 123456789, 3333333333
+maria jose, majo@gma.com, 123456789, 4444444444
+alejandro, alejandro@gma.com, 123456789
+guadalupe, guadalupe@gma.com, 123456789, 6666666666
+gilma, 123456789, 777777777

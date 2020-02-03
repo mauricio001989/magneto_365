@@ -1,22 +1,10 @@
-# TODO: update faker in productions
-
 puts'create user'
-5.times do
-  User.create(name: Faker::Name.name,
-              id_document: Faker::Number.number(digits: 7),
-              email: Faker::Internet.email,
-              phone: Faker::Number.number(digits: 10))
-end
+Rake::Task['db:upload_user:create'].invoke
 
 puts 'create films'
-5.times do
-  Film.create(name: Faker::Game.title,
-              description: Faker::Movies::BackToTheFuture.quote,
-              url_image: Faker::Fillmurray.image,
-              start_date: Time.zone.today,
-              final_date: Time.zone.today + 5.day)
-end
+Rake::Task['db:upload_films:create'].invoke
 
 puts 'create reservation'
-Reservation.create(user: User.last, film: Film.last)
-Reservation.create(user: User.second, film: Film.second)
+10.times do
+  Reservation.create(user: User.order('RANDOM()').first, film: Film.last)
+end
