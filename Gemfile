@@ -29,6 +29,7 @@ gem 'webmock', '~> 3.4.2'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'interactor', '~> 3.1.1'
 gem 'versionist', '~> 1.7.0'
+gem 'rack-cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
